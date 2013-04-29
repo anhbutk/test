@@ -44,6 +44,7 @@ local.properties
 # Build results
 [Dd]ebug/
 [Rr]elease/
+[Ii]mages/thumbs/
 *_i.c
 *_p.c
 *.ilk
