@@ -10,7 +10,7 @@
                  <param name="FlashVars" value="flv=/Uploaded/VideoClip/<%= FileName() %>&amp;bgcolor=860000&amp;bgcolor1=860000&amp;bgcolor2=550E08&amp;showfullscreen=1&amp;playercolor=860000&amp;autoplay=1&amp;buttoncolor=F3C476&amp;slidercolor1=F3C476" />
             </object> -->            
             <iframe class="youtube-player" type="text/html" width="171" height="150" 
-                        src="http://www.youtube.com/embed/<%= FileName() %>?autoplay=1" frameborder="0">
+                        src="http://www.youtube.com/embed/<%= FileName() %>?autoplay=1&rel=0" frameborder="0">
             </iframe>
         </p>
     </div>
