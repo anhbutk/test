@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/PhanNuRoot.Master" AutoEventWireup="true"
+    CodeBehind="TwoColumnPhanNu.master.cs" Inherits="NopSolutions.NopCommerce.Web.MasterPages.TwoColumnPhanNu" %>
+
+<%@ Register TagPrefix="nopCommerce" TagName="LeftInfo" Src="~/Modules/LeftInfo.ascx" %>
+<%@ Register TagPrefix="nopCommerce" TagName="CategoryNavigation" Src="~/Modules/CategoryNavigation.ascx" %>
+<%@ Register TagPrefix="nopCommerce" TagName="ManufacturerNavigation" Src="~/Modules/ManufacturerNavigation.ascx" %>
+<%@ Register TagPrefix="nopCommerce" TagName="InfoBlock" Src="~/Modules/InfoBlock.ascx" %>
+<%@ Register TagPrefix="nopCommerce" TagName="RecentlyViewedProducts" Src="~/Modules/RecentlyViewedProductsBox.ascx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="cph1" runat="server">
+    <asp:ContentPlaceHolder ID="cphtitle" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="bg_left">
+        <a href="<%=Page.ResolveUrl("~/Default.aspx")%>">
+            <div id="logo">
+                &nbsp;
+            </div>
+        </a>
+        <asp:ContentPlaceHolder ID="cph2" runat="server">
+            <nopCommerce:CategoryNavigation ID="ctrlCategoryNavigation" runat="server" />
+            <nopCommerce:LeftInfo ID="LeftInfo1" runat="server" />
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="bg_content">
+        <asp:ContentPlaceHolder ID="cph1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="line">
+    </div>
+</asp:Content>

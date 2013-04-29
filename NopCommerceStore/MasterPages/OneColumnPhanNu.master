@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/PhanNuRoot.Master" AutoEventWireup="true"
+    CodeBehind="OneColumnPhanNu.master.cs" Inherits="NopSolutions.NopCommerce.Web.MasterPages.OneColumnPhanNu" %>
+
+<%@ Register TagPrefix="nopCommerce" TagName="LeftInfo" Src="~/Modules/LeftInfo.ascx" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cph1" runat="server">
+    <asp:ContentPlaceHolder ID="cphtitle" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="bg_left">
+        <a href="<%=Page.ResolveUrl("~/Default.aspx")%>">
+            <div id="logo">
+                &nbsp;
+            </div>
+        </a>
+        <asp:ContentPlaceHolder ID="cph2" runat="server">
+            <nopCommerce:LeftInfo ID="LeftInfo1" runat="server" />            
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="bg_content">
+        <asp:ContentPlaceHolder ID="cph1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="line">
+        </div>
+</asp:Content>

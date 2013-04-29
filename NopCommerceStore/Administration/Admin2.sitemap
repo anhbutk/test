@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap enableLocalization="true" xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home" url="~/Administration/default.aspx"  description="Administration Home" nopResourceTitle="Admin.Sitemap.HomeTitle" nopResourceDescription="Admin.Sitemap.HomeDescription">
+
+    <siteMapNode title="Categories" url="~/Administration/Categories.aspx" IconUrl="~/Administration/Common/ico-catalog.png" description="Manage Product Categories" nopResourceTitle="Admin.Sitemap.CategoriesTitle" nopResourceDescription="Admin.Sitemap.CategoriesDescription" >
+    </siteMapNode>
+
+    <siteMapNode title="Products" url="~/Administration/Products.aspx" IconUrl="~/Administration/Common/ico-catalog.png" description="Manage Products" nopResourceTitle="Admin.Sitemap.ProductsTitle" nopResourceDescription="Admin.Sitemap.ProductsDescription" >
+    </siteMapNode>
+
+    <siteMapNode title="Orders" url="~/Administration/Orders.aspx" IconUrl="~/Administration/Common/ico-sales.png" description="Orders" nopResourceTitle="Admin.Sitemap.OrdersTitle" nopResourceDescription="Admin.Sitemap.OrdersDescription" >
+    </siteMapNode>   
+
+    <siteMapNode title="News" IconUrl="~/Administration/Common/ico-content.png" description="News" nopResourceTitle="Admin.Sitemap.NewsHomeTitle" nopResourceDescription="Admin.Sitemap.NewsHomeTitle" >
+
+      <siteMapNode title="News Category" url="~/Administration/Forums.aspx" description="Admin.Sitemap.NewsCateogoryTitle" nopResourceTitle="Admin.Sitemap.NewsCateogoryTitle" nopResourceDescription="Admin.Sitemap.NewsCateogoryTitle" />
+      <siteMapNode title="News" url="~/Administration/ForumTopicList.aspx" description="News Home" nopResourceTitle="Admin.Sitemap.NewsHomeTitle" nopResourceDescription="Admin.Sitemap.NewsHomeDescription" >
+      </siteMapNode>
+      <siteMapNode title="News Sort" url="~/Administration/ForumTopicListReorder.aspx" description="News Sort" nopResourceTitle="Admin.Sitemap.NewsSortTitle" nopResourceDescription="Admin.Sitemap.NewsSortTitle" >
+      </siteMapNode>
+    </siteMapNode>
+
+    
+
+    
+
+    <siteMapNode title="Configuration" IconUrl="~/Administration/Common/ico-configuration.png" description="Configuration Home" nopResourceTitle="Admin.Sitemap.ConfigurationTitle" nopResourceDescription="Admin.Sitemap.ConfigurationDescription" >
+      <siteMapNode title="Payment Methods" url="~/Administration/PaymentMethodsAvailable.aspx" description="Manage Payment Methods" nopResourceTitle="Admin.Sitemap.PaymentMethodsTitle" nopResourceDescription="Admin.Sitemap.PaymentMethodsDescription" >
+      </siteMapNode>
+      <siteMapNode title="FAQ" url="~/Administration/FAQ.aspx" description="Manage Faqs" nopResourceTitle="Admin.Sitemap.FAQTitle" nopResourceDescription="Admin.Sitemap.FAQDescription" />
+      <siteMapNode title="Topics" url="~/Administration/Topics.aspx" description="Manage Topics" nopResourceTitle="Admin.Sitemap.TopicsTitle" nopResourceDescription="Admin.Sitemap.TopicsDescription" />
+    </siteMapNode>
+    
+    
+    <siteMapNode title="Banners" url="~/Administration/BannerList.aspx" IconUrl="~/Administration/Common/ico-promotions.png" description="Manage Banners" nopResourceTitle="Admin.Sitemap.Banners" nopResourceDescription="Admin.Sitemap.Banners" />
+    
+   
+    
+    <siteMapNode title="Game" IconUrl="~/Administration/Common/ico-system.png" description="Game" nopResourceTitle="Admin.Sitemap.GameTitle" nopResourceDescription="Admin.Sitemap.GameTitle" >
+      <siteMapNode title="Question" url="~/Administration/Question.aspx" description="Game Question" nopResourceTitle="Admin.Sitemap.Question" nopResourceDescription="Admin.Sitemap.Question" />
+      <siteMapNode title="Answer" url="~/Administration/Answer.aspx" description="Game Answer" nopResourceTitle="Admin.Sitemap.Answer" nopResourceDescription="Admin.Sitemap.Answer" />
+      <siteMapNode title="Question In Month" url="~/Administration/QuestionInMonth.aspx" description="Question In Month" nopResourceTitle="Admin.Sitemap.QuestionInMonth" nopResourceDescription="Admin.Sitemap.QuestionInMonth" />
+      <siteMapNode title="Customer Result" url="~/Administration/CustomerResult.aspx" description="Customer Result" nopResourceTitle="Admin.Sitemap.CustomerResult" nopResourceDescription="Admin.Sitemap.CustomerResult" />
+    </siteMapNode>
+
+
+
+  </siteMapNode>
+</siteMap>

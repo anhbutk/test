@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/PhanNuRoot.Master" AutoEventWireup="true"
+    CodeBehind="HomePagePhanNu.master.cs" Inherits="NopSolutions.NopCommerce.Web.MasterPages.HomePagePhanNu" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cph1" runat="server">
+    <asp:ContentPlaceHolder ID="cphtitle" runat="server">
+        <div id="hometitle">
+            <img src="images/hometiitle.jpg" alt="home" /></div>
+    </asp:ContentPlaceHolder>
+    <div id="center_home">
+        <asp:ContentPlaceHolder ID="left" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="center" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="right" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="bottom" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="bottom2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
