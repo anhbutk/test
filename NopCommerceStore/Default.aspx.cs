@@ -32,6 +32,7 @@ using NopSolutions.NopCommerce.BusinessLogic.Configuration.Settings;
 using NopSolutions.NopCommerce.BusinessLogic.Content.NewsManagement;
 using NopSolutions.NopCommerce.BusinessLogic.Content.Polls;
 using NopSolutions.NopCommerce.Common.Utils;
+using NopSolutions.NopCommerce.BusinessLogic.Banner;
 
 namespace NopSolutions.NopCommerce.Web
 {
@@ -73,9 +74,21 @@ namespace NopSolutions.NopCommerce.Web
             //{
             //    topicHomePageText.Visible = false;
             //}
+            BannerCollection collection = BannerManager.GetAllBanner();
 
-            bool showBannerOnMainPage = SettingManager.GetSettingValueBoolean("Media.Banner.EnableHomepageBanner");
+            bool showBannerOnMainPage = SettingManager.GetSettingValueBoolean("Media.Banner.EnableHomepageBanner") && (collection.FindAll(IsPublished).FindAll(IsHomepage).Count >= 1);           
+            
             HomePageBanner.Visible = showBannerOnMainPage;
+        }
+
+        static bool IsPublished(Banner x)
+        {
+            return x.IsPublish;
+        }
+
+        static bool IsHomepage(Banner x)
+        {
+            return x.Position == 2;
         }
     }
 }
