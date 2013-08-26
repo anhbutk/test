@@ -37,13 +37,17 @@ namespace NopSolutions.NopCommerce.Web.Administration
             if (!Page.IsPostBack)
             {
                 lblHeader.Text = string.Format("nopCommerce {0}", SiteHelper.GetCurrentVersion());
-                if (NopContext.Current.User.Email != System.Configuration.ConfigurationManager.AppSettings["AdminEmail"])
+                if (NopContext.Current.User.Email == System.Configuration.ConfigurationManager.AppSettings["AdminEmail"])
                 {
-                    smdsMenu.SiteMapProvider = "NopAdminXmlSiteMapProvider2";
+                    smdsMenu.SiteMapProvider = "NopAdminXmlSiteMapProviderMaster";
+                }
+                else if(NopContext.Current.User.Email == "admin@yourstore.com")
+                {
+                    smdsMenu.SiteMapProvider = "NopAdminXmlSiteMapProvider";
                 }
                 else
                 {
-                    smdsMenu.SiteMapProvider = "NopAdminXmlSiteMapProvider1";
+                    smdsMenu.SiteMapProvider = "NopAdminXmlSiteMapProviderEditor";
                 }
             }
         }

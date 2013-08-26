@@ -26,6 +26,11 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -6739,10 +6744,10 @@
     <Content Include="PrivateMessages.aspx" />
     <Content Include="Froogle.ashx" />
     <Content Include="Administration\popup.master" />
-    <Content Include="Administration\Admin1.sitemap">
+    <Content Include="Administration\AdminMaster.sitemap">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Administration\Admin2.sitemap">
+    <Content Include="Administration\AdminEditor.sitemap">
       <SubType>Designer</SubType>
     </Content>
     <None Include="App_Themes\PhanNu\images\Thumbs.db" />

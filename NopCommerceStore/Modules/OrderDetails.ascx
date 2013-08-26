@@ -52,93 +52,111 @@
         </div>
         <div class="clear">
         </div>
-        <asp:Panel runat="server" ID="pnlShipping" Style="width: 50%; float: left; margin: 10px 0">
-            <table width="100%" border="0">
-                <tbody>
-                    <tr>
-                        <td>
-                            <b>
-                                <%=GetLocaleResourceString("Order.ShippingAddress")%></b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Literal ID="lShippingFirstName" runat="server"></asp:Literal>
-                            <asp:Literal ID="lShippingLastName" runat="server"></asp:Literal><br />
-                            <div>
-                                <%=GetLocaleResourceString("Order.Email")%>:
-                                <asp:Literal ID="lShippingEmail" runat="server"></asp:Literal></div>
-                            <div>
-                                <%=GetLocaleResourceString("Order.Phone")%>:
-                                <asp:Literal ID="lShippingPhoneNumber" runat="server"></asp:Literal></div>
-                            <div>
-                                <%=GetLocaleResourceString("Order.Fax")%>:
-                                <asp:Literal ID="lShippingFaxNumber" runat="server"></asp:Literal></div>
-                            <asp:Panel ID="pnlShippingCompany" runat="server">
-                                <%=GetLocaleResourceString("Address.Company")%>:
-                                <asp:Literal ID="lShippingCompany" runat="server"></asp:Literal></asp:Panel>
-                            <div>
-                                <%=GetLocaleResourceString("Address.Address1")%>:
-                                <asp:Literal ID="lShippingAddress1" runat="server"></asp:Literal></div>
-                            <asp:Panel ID="pnlShippingAddress2" runat="server">
-                                <%=GetLocaleResourceString("Address.Address2")%>:
-                                <asp:Literal ID="lShippingAddress2" runat="server"></asp:Literal></asp:Panel>
-                            <div>
-                                <%=GetLocaleResourceString("Address.City")%>:
+        <div style="width: 100%; float: left; margin: 10px 0">
+            <asp:Panel runat="server" ID="pnlShipping" Style="width: 50%; float: left; margin: 10px 0">
+                <table width="100%" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>
+                                    <%=GetLocaleResourceString("Order.ShippingAddress")%></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Literal ID="lShippingFirstName" runat="server"></asp:Literal>
+                                <asp:Literal ID="lShippingLastName" runat="server"></asp:Literal><br />
+                                <div>
+                                    <%=GetLocaleResourceString("Order.Email")%>:
+                                <asp:Literal ID="lShippingEmail" runat="server"></asp:Literal>
+                                </div>
+                                <div>
+                                    <%=GetLocaleResourceString("Order.Phone")%>:
+                                <asp:Literal ID="lShippingPhoneNumber" runat="server"></asp:Literal>
+                                </div>
+                                <div>
+                                    <%=GetLocaleResourceString("Order.Fax")%>:
+                                <asp:Literal ID="lShippingFaxNumber" runat="server"></asp:Literal>
+                                </div>
+                                <asp:Panel ID="pnlShippingCompany" runat="server">
+                                    <%=GetLocaleResourceString("Address.Company")%>:
+                                <asp:Literal ID="lShippingCompany" runat="server"></asp:Literal>
+                                </asp:Panel>
+                                <div>
+                                    <%=GetLocaleResourceString("Address.Address1")%>:
+                                <asp:Literal ID="lShippingAddress1" runat="server"></asp:Literal>
+                                </div>
+                                <asp:Panel ID="pnlShippingAddress2" runat="server">
+                                    <%=GetLocaleResourceString("Address.Address2")%>:
+                                <asp:Literal ID="lShippingAddress2" runat="server"></asp:Literal>
+                                </asp:Panel>
+                                <div>
+                                    <%=GetLocaleResourceString("Address.City")%>:
                                 <asp:Literal ID="lShippingCity" runat="server"></asp:Literal>,
                                 <asp:Literal ID="lShippingStateProvince" runat="server"></asp:Literal>
-                                <asp:Literal ID="lShippingZipPostalCode" runat="server"></asp:Literal></div>
-                            <asp:Panel ID="pnlShippingCountry" runat="server">
-                                <%=GetLocaleResourceString("Address.Country")%>:
-                                <asp:Literal ID="lShippingCountry" runat="server"></asp:Literal></asp:Panel>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </asp:Panel>
-        <div class="BillingBox" style="width: 50%; float: right; margin: 10px 0">
-            <table width="100%" cellspacing="3" cellpadding="2" border="0">
-                <tbody>
-                    <tr>
-                        <td>
-                            <b>
-                                <%=GetLocaleResourceString("Order.BillingAddress")%></b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:Literal ID="lBillingFirstName" runat="server"></asp:Literal>
-                            <asp:Literal ID="lBillingLastName" runat="server"></asp:Literal><br />
-                            <div>
-                                <%=GetLocaleResourceString("Order.Email")%>:
-                                <asp:Literal ID="lBillingEmail" runat="server"></asp:Literal></div>
-                            <div>
-                                <%=GetLocaleResourceString("Order.Phone")%>:
-                                <asp:Literal ID="lBillingPhoneNumber" runat="server"></asp:Literal></div>
-                            <div>
-                                <%=GetLocaleResourceString("Order.Fax")%>:
-                                <asp:Literal ID="lBillingFaxNumber" runat="server"></asp:Literal></div>
-                            <asp:Panel ID="pnlBillingCompany" runat="server">
-                                <%=GetLocaleResourceString("Address.Company")%>:
-                                <asp:Literal ID="lBillingCompany" runat="server"></asp:Literal></asp:Panel>
-                            <div>
-                                <%=GetLocaleResourceString("Address.Address1")%>:
-                                <asp:Literal ID="lBillingAddress1" runat="server"></asp:Literal></div>
-                            <asp:Panel ID="pnlBillingAddress2" runat="server">
-                                <%=GetLocaleResourceString("Address.Address2")%>:
-                                <asp:Literal ID="lBillingAddress2" runat="server"></asp:Literal></asp:Panel>
-                            <div>
-                                <%=GetLocaleResourceString("Address.City")%>:
+                                    <asp:Literal ID="lShippingZipPostalCode" runat="server"></asp:Literal>
+                                </div>
+                                <asp:Panel ID="pnlShippingCountry" runat="server">
+                                    <%=GetLocaleResourceString("Address.Country")%>:
+                                <asp:Literal ID="lShippingCountry" runat="server"></asp:Literal>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </asp:Panel>
+            <div class="BillingBox" style="width: 50%; float: right; margin: 10px 0">
+                <table width="100%" cellspacing="3" cellpadding="2" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>
+                                    <%=GetLocaleResourceString("Order.BillingAddress")%></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Literal ID="lBillingFirstName" runat="server"></asp:Literal>
+                                <asp:Literal ID="lBillingLastName" runat="server"></asp:Literal><br />
+                                <div>
+                                    <%=GetLocaleResourceString("Order.Email")%>:
+                                <asp:Literal ID="lBillingEmail" runat="server"></asp:Literal>
+                                </div>
+                                <div>
+                                    <%=GetLocaleResourceString("Order.Phone")%>:
+                                <asp:Literal ID="lBillingPhoneNumber" runat="server"></asp:Literal>
+                                </div>
+                                <div>
+                                    <%=GetLocaleResourceString("Order.Fax")%>:
+                                <asp:Literal ID="lBillingFaxNumber" runat="server"></asp:Literal>
+                                </div>
+                                <asp:Panel ID="pnlBillingCompany" runat="server">
+                                    <%=GetLocaleResourceString("Address.Company")%>:
+                                <asp:Literal ID="lBillingCompany" runat="server"></asp:Literal>
+                                </asp:Panel>
+                                <div>
+                                    <%=GetLocaleResourceString("Address.Address1")%>:
+                                <asp:Literal ID="lBillingAddress1" runat="server"></asp:Literal>
+                                </div>
+                                <asp:Panel ID="pnlBillingAddress2" runat="server">
+                                    <%=GetLocaleResourceString("Address.Address2")%>:
+                                <asp:Literal ID="lBillingAddress2" runat="server"></asp:Literal>
+                                </asp:Panel>
+                                <div>
+                                    <%=GetLocaleResourceString("Address.City")%>:
                                 <asp:Literal ID="lBillingCity" runat="server"></asp:Literal>,
                                 <asp:Literal ID="lBillingStateProvince" runat="server"></asp:Literal>
-                                <asp:Literal ID="lBillingZipPostalCode" runat="server"></asp:Literal></div>
-                            <asp:Panel ID="pnlBillingCountry" runat="server">
-                                <%=GetLocaleResourceString("Address.Country")%>:
-                                <asp:Literal ID="lBillingCountry" runat="server"></asp:Literal></asp:Panel>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                                    <asp:Literal ID="lBillingZipPostalCode" runat="server"></asp:Literal>
+                                </div>
+                                <asp:Panel ID="pnlBillingCountry" runat="server">
+                                    <%=GetLocaleResourceString("Address.Country")%>:
+                                <asp:Literal ID="lBillingCountry" runat="server"></asp:Literal>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="clear">
         </div>

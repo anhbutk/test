@@ -102,6 +102,12 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
             return customers.FindAll(IsBirthdayToday);
         }
 
+        protected List<Customer> GetTop20Customers()
+        {
+            CustomerCollection customers = CustomerManager.CustomerLoadTop20HighestSavePoint();
+            return customers;
+        }
+
         protected void BindGrid()
         {
             CustomerCollection customers = GetCustomers();
@@ -114,6 +120,12 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
             gvCustomers.DataSource = GetBirthdayCustomers();
             gvCustomers.DataBind();
         }
+
+        protected void BindTop20Grid()
+        {
+            gvCustomers.DataSource = GetTop20Customers();
+            gvCustomers.DataBind();
+        }        
 
         protected string GetCustomerInfo(Customer customer)
         {
@@ -135,7 +147,18 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
         protected void gvCustomers_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvCustomers.PageIndex = e.NewPageIndex;
-            BindGrid();
+            switch (Session["state"].ToString())
+            {
+                case "birthday":
+                    BindBirthdayGrid();
+                    break;
+                case "top20":
+                    BindTop20Grid();
+                    break;
+                case "showall": 
+                    BindGrid();
+                    break;
+            }
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
@@ -145,6 +168,7 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
                 try
                 {
                     BindGrid();
+                    Session["state"] = "showall";
                 }
                 catch (Exception exc)
                 {
@@ -223,6 +247,23 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
                 try
                 {
                     BindBirthdayGrid();
+                    Session["state"] = "birthday";
+                }
+                catch (Exception exc)
+                {
+                    ProcessException(exc);
+                }
+            }
+        }
+
+        protected void btnTop20_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                try
+                {
+                    BindTop20Grid();
+                    Session["state"] = "top20";
                 }
                 catch (Exception exc)
                 {

@@ -39,6 +39,7 @@ using NopSolutions.NopCommerce.BusinessLogic.Tax;
 using NopSolutions.NopCommerce.BusinessLogic.Utils;
 using NopSolutions.NopCommerce.BusinessLogic.Utils.Html;
 using NopSolutions.NopCommerce.Common.Utils;
+using NopSolutions.NopCommerce.BusinessLogic.Messages;
 
 
 namespace NopSolutions.NopCommerce.Web.Administration.Modules
@@ -582,6 +583,30 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
 
                 PDFHelper.PrintOrderToPDF(order, NopContext.Current.WorkingLanguage.LanguageID, filePath, fontPath);
                 CommonHelper.WriteResponsePDF(filePath, fileName);
+            }
+            catch (Exception ex)
+            {
+                ProcessException(ex);
+            }
+        }
+
+        protected void btnPrintOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Order order = OrderManager.GetOrderByID(this.OrderID);
+
+                string content = MessageManager.GetEmailContentForPrint(order, LocalizationManager.DefaultAdminLanguage.LanguageID);
+
+                Response.Clear();
+                Response.ClearHeaders();
+                Response.AddHeader("Pragma", "public");
+                Response.AddHeader("Expires", "0");
+                Response.AddHeader("Content-Type", "application/word");
+                Response.AddHeader("Content-Disposition", "inline; filename=order" + this.OrderID + ".doc");
+                Response.Write(content);
+                Response.Flush();
+                Response.End();
             }
             catch (Exception ex)
             {

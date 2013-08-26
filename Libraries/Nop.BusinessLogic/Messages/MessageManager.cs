@@ -618,6 +618,28 @@ namespace NopSolutions.NopCommerce.BusinessLogic.Messages
         }
 
         /// <summary>
+        /// Get content of email for printing order
+        /// </summary>
+        /// <param name="order">Order instance</param>
+        /// <param name="LanguageID">Message language identifier</param>
+        /// <returns>content of email</returns>
+        public static string GetEmailContentForPrint(Order order, int LanguageID)
+        {
+            if (order == null)
+                throw new ArgumentNullException("order");
+
+            string TemplateName = "OrderPlaced.StoreOwnerNotification";
+            LocalizedMessageTemplate localizedMessageTemplate = MessageManager.GetLocalizedMessageTemplate(TemplateName, LanguageID);
+            if (localizedMessageTemplate == null)
+                return "";
+            //throw new NopException(string.Format("Message template ({0}-{1}) couldn't be loaded", TemplateName, LanguageID));
+
+            string body = ReplaceMessageTemplateTokens(order, localizedMessageTemplate.Body, LanguageID);
+
+            return body;
+        }
+
+        /// <summary>
         /// Sends a "quantity below" notification to a store owner
         /// </summary>
         /// <param name="productVariant">Product variant</param>

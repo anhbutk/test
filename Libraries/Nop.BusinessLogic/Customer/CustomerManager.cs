@@ -877,6 +877,17 @@ namespace NopSolutions.NopCommerce.BusinessLogic.CustomerManagement
         }
 
         /// <summary>
+        /// Get top 20 highest save point customer
+        /// </summary>        
+        /// <returns>Customer collection</returns>
+        public static CustomerCollection CustomerLoadTop20HighestSavePoint()
+        {
+            DBCustomerCollection dbCollection = DBProviderManager<DBCustomerProvider>.Provider.CustomerLoadTop20HighestSavePoint();
+            CustomerCollection customers = DBMapping(dbCollection);
+            return customers;
+        }
+
+        /// <summary>
         /// Gets a customer
         /// </summary>
         /// <param name="CustomerID">Customer identifier</param>

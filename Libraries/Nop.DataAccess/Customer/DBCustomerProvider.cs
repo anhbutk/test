@@ -137,6 +137,12 @@ namespace NopSolutions.NopCommerce.DataAccess.CustomerManagement
         public abstract DBCustomerCollection GetAffiliatedCustomers(int AffiliateID);
 
         /// <summary>
+        /// Get top 20 highest save point customer
+        /// </summary>
+        /// <returns>Customer collection</returns>
+        public abstract DBCustomerCollection CustomerLoadTop20HighestSavePoint();
+
+        /// <summary>
         /// Gets all customers by customer role id
         /// </summary>
         /// <param name="CustomerRoleID">Customer role identifier</param>

@@ -9,7 +9,9 @@
             (<%=GetLocaleResourceString("Admin.OrderDetails.BackToOrders")%>)</a>
     </div>
     <div class="options">
-        <asp:Button ID="btnGetInvoicePDF" runat="server" CssClass="adminButtonBlue" Text="<% $NopResources:Admin.OrderDetails.InvoicePDF.Text %>"
+        <asp:Button ID="btnPrintOrder" runat="server" CssClass="adminButtonBlue" Text="<% $NopResources:Admin.OrderDetails.PrintOrder.Text %>"
+            OnClick="btnPrintOrder_Click" CausesValidation="false" ToolTip="<% $NopResources:Admin.OrderDetails.PrintOrder.Text %>" />
+        <asp:Button ID="btnGetInvoicePDF" Visible="false" runat="server" CssClass="adminButtonBlue" Text="<% $NopResources:Admin.OrderDetails.InvoicePDF.Text %>"
             OnClick="btnGetInvoicePDF_Click" CausesValidation="false" ToolTip="<% $NopResources:Admin.OrderDetails.InvoicePDF.Tooltip %>" />
         <asp:Button ID="DeleteButton" runat="server" CssClass="adminButtonBlue" Text="<% $NopResources:Admin.OrderDetails.DeleteButton.Text %>"
             OnClick="DeleteButton_Click" CausesValidation="false" ToolTip="<% $NopResources:Admin.OrderDetails.DeleteButton.Tooltip %>" />

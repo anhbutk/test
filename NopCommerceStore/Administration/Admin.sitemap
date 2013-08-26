@@ -76,12 +76,12 @@
       </siteMapNode>
       <siteMapNode title="Localization" url="~/Administration/LocaleStringResources.aspx" description="Manage Store Localization" nopResourceTitle="Admin.Sitemap.LocaleStringResourcesTitle" nopResourceDescription="Admin.Sitemap.LocaleStringResourcesDescription" />
       <siteMapNode title="FAQ" url="~/Administration/FAQ.aspx" description="Manage Faqs" nopResourceTitle="Admin.Sitemap.FAQTitle" nopResourceDescription="Admin.Sitemap.FAQDescription" />
-      <siteMapNode title="Game" description="Game" nopResourceTitle="Admin.Sitemap.GameTitle" nopResourceDescription="Game" >
-        <siteMapNode title="Question" url="~/Administration/Question.aspx" description="Game Question" nopResourceTitle="Admin.Sitemap.Question" nopResourceDescription="Question" />
-        <siteMapNode title="Answer" url="~/Administration/Answer.aspx" description="Game Answer" nopResourceTitle="Admin.Sitemap.Answer" nopResourceDescription="Answer" />
-        <siteMapNode title="Question In Month" url="~/Administration/QuestionInMonth.aspx" description="Question In Month" nopResourceTitle="Admin.Sitemap.QuestionInMonth" nopResourceDescription="Quetion In Month" />
-        <siteMapNode title="Customer Result" url="~/Administration/CustomerResult.aspx" description="Customer Result" nopResourceTitle="Admin.Sitemap.CustomerResult" nopResourceDescription="Customer Result" />
-        <siteMapNode title="Winner In Month" url="~/Administration/WinnerInMonth.aspx" description="Winner In Month" nopResourceTitle="Admin.Sitemap.WinnerInMonth" nopResourceDescription="Winner In Month" />
+      <siteMapNode title="Game" description="Game" nopResourceTitle="Admin.Sitemap.GameTitle" nopResourceDescription="Admin.Sitemap.GameTitle" >
+        <siteMapNode title="Question" url="~/Administration/Question.aspx" description="Game Question" nopResourceTitle="Admin.Sitemap.Question" nopResourceDescription="Admin.Sitemap.Question" />
+        <siteMapNode title="Answer" url="~/Administration/Answer.aspx" description="Game Answer" nopResourceTitle="Admin.Sitemap.Answer" nopResourceDescription="Admin.Sitemap.Answer" />
+        <siteMapNode title="Question In Month" url="~/Administration/QuestionInMonth.aspx" description="Question In Month" nopResourceTitle="Admin.Sitemap.QuestionInMonth" nopResourceDescription="Admin.Sitemap.QuestionInMonth" />
+        <siteMapNode title="Customer Result" url="~/Administration/CustomerResult.aspx" description="Customer Result" nopResourceTitle="Admin.Sitemap.CustomerResult" nopResourceDescription="Admin.Sitemap.CustomerResult" />
+        <siteMapNode title="Winner In Month" url="~/Administration/WinnerInMonth.aspx" description="Winner In Month" nopResourceTitle="Admin.Sitemap.WinnerInMonth" nopResourceDescription="Admin.Sitemap.WinnerInMonth" />
       </siteMapNode>
     </siteMapNode>
     <!-- End Content Management -->

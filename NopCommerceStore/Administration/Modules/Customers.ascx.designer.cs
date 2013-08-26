@@ -58,6 +58,15 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules {
         protected global::System.Web.UI.WebControls.Button btnBirthday;
         
         /// <summary>
+        /// btnTop20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTop20;
+        
+        /// <summary>
         /// lblRegistrationFrom control.
         /// </summary>
         /// <remarks>

@@ -10,8 +10,7 @@
 
     <siteMapNode title="Orders" url="~/Administration/Orders.aspx" IconUrl="~/Administration/Common/ico-sales.png" description="Orders" nopResourceTitle="Admin.Sitemap.OrdersTitle" nopResourceDescription="Admin.Sitemap.OrdersDescription" >
     </siteMapNode>
-    <siteMapNode title="Customers" url="~/Administration/Customers.aspx" IconUrl="~/Administration/Common/ico-customers.png" description="Customers Home" nopResourceTitle="Admin.Sitemap.CustomersHomeTitle" nopResourceDescription="Admin.Sitemap.CustomersHomeDescription" >
-    </siteMapNode>
+ 
     <siteMapNode title="News" IconUrl="~/Administration/Common/ico-content.png" description="News" nopResourceTitle="Admin.Sitemap.NewsHomeTitle" nopResourceDescription="Admin.Sitemap.NewsHomeTitle" >
 
       <siteMapNode title="News Category" url="~/Administration/Forums.aspx" description="Admin.Sitemap.NewsCateogoryTitle" nopResourceTitle="Admin.Sitemap.NewsCateogoryTitle" nopResourceDescription="Admin.Sitemap.NewsCateogoryTitle" />

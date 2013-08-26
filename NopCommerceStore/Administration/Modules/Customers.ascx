@@ -21,6 +21,8 @@
             id="btnAddNew" class="adminButtonBlue" title="<%=GetLocaleResourceString("Admin.Customers.AddNewButton.Tooltip")%>" />
         <asp:Button ID="btnBirthday" runat="server" Text="<% $NopResources:Admin.Customers.btnBirthday.Text %>"
             CssClass="adminButtonBlue" OnClick="btnBirthday_Click" ToolTip="<% $NopResources:Admin.Customers.btnBirthday.Tooltip %>" />
+        <asp:Button ID="btnTop20" runat="server" Text="<% $NopResources:Admin.Customers.btnTop20.Text %>"
+            CssClass="adminButtonBlue" OnClick="btnTop20_Click" ToolTip="<% $NopResources:Admin.Customers.btnTop20.Text %>" />
         <input type="button" onclick="location.href='ResetSavePoint.aspx'" value="<%=GetLocaleResourceString("Admin.Customer.ResetSavePoint")%>"
             id="btnResetSavePoint" class="adminButtonBlue" title="<%=GetLocaleResourceString("Admin.Customer.ResetSavePoint")%>" />
     </div>

@@ -1139,6 +1139,23 @@ namespace NopSolutions.NopCommerce.DataAccess.CustomerManagement
             db.AddInParameter(dbCommand, "Date", DbType.DateTime, dateFrom);
             return count = (int)db.ExecuteScalar(dbCommand);
         }
+
+        public override DBCustomerCollection CustomerLoadTop20HighestSavePoint()
+        {
+            DBCustomerCollection customerCollection = new DBCustomerCollection();
+            Database db = NopSqlDataHelper.CreateConnection(_sqlConnectionString);
+            DbCommand dbCommand = db.GetStoredProcCommand("Nop_CustomerLoadTop20HighestSavePoint");
+            using (IDataReader dataReader = db.ExecuteReader(dbCommand))
+            {
+                while (dataReader.Read())
+                {
+                    DBCustomer customer = GetCustomerFromReader(dataReader);
+                    customerCollection.Add(customer);
+                }
+            }
+
+            return customerCollection;
+        }
         #endregion
     }
 }

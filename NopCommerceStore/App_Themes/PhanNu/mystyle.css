@@ -579,19 +579,12 @@ body
     height: 107px;
     display: block;
     float: left;
-    margin-left: 50px;
+    margin-left: 70px;
     background-image: url(images/logo.jpg);
     background-repeat: no-repeat;
 }
 #logo:hover
-{
-    width: 185px;
-    height: 107px;
-    display: block;
-    float: left;
-    margin-left: 50px;
-    background-image: url(images/logo.jpg);
-    background-repeat: no-repeat;
+{    
     cursor: pointer;
 }
 

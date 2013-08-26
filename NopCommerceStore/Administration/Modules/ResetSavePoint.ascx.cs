@@ -47,6 +47,7 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
             {
                 this.ddlYear.Items.Add(new ListItem(i.ToString(), i.ToString()));
             }
+            this.ddlYear.SelectedValue = SettingManager.GetSettingByName("Customer.SavePointYear").Value;
         }
 
         protected void btnReset_Click(object sender, EventArgs e)

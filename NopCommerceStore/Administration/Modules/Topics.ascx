@@ -7,7 +7,7 @@
         <%=GetLocaleResourceString("Admin.Topics.Title")%>
     </div>
     <div class="options">
-        <input type="button" onclick="location.href='TopicAdd.aspx'" value="<%=GetLocaleResourceString("Admin.Topics.AddNewButton.Text")%>"
+        <input type="button" style="display:none" onclick="location.href='TopicAdd.aspx'" value="<%=GetLocaleResourceString("Admin.Topics.AddNewButton.Text")%>"
             id="btnAddNew" class="adminButtonBlue" title="<%=GetLocaleResourceString("Admin.Topics.AddNewButton.Tooltip")%>" />
     </div>
 </div>
