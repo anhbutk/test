@@ -202,6 +202,24 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules {
         protected global::System.Web.UI.WebControls.CheckBox cbDontLoadGuestCustomers;
         
         /// <summary>
+        /// lblLoadAdminOnly control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::NopSolutions.NopCommerce.Web.Administration.Modules.ToolTipLabelControl lblLoadAdminOnly;
+        
+        /// <summary>
+        /// cbLoadAdminOnly control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbLoadAdminOnly;
+        
+        /// <summary>
         /// gvCustomers control.
         /// </summary>
         /// <remarks>

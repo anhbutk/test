@@ -52,7 +52,7 @@ namespace NopSolutions.NopCommerce.Web.Modules
                 pane.HeaderContainer.Controls.Add(new LiteralControl(collection.Question));
                 pane.ContentContainer.Controls.Add(new LiteralControl(collection.Answer)); 
 
-                FAQList.Panes.Add(pane);
+                FAQList.Panes.Add(pane);                
             }
         }
     }

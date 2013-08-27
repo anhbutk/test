@@ -31,6 +31,7 @@ using NopSolutions.NopCommerce.BusinessLogic.Content.Topics;
 using NopSolutions.NopCommerce.BusinessLogic.Game;
 using NopSolutions.NopCommerce.BusinessLogic.Localization;
 using NopSolutions.NopCommerce.BusinessLogic.Messages;
+using AjaxControlToolkit;
 
 
 namespace NopSolutions.NopCommerce.Web.Modules
@@ -46,53 +47,76 @@ namespace NopSolutions.NopCommerce.Web.Modules
 
         private void BindData()
         {
-            rptDatetime.DataSource = GameManager.GetDistinctCustomerResultByMonthYear();
-            rptDatetime.DataBind();
+            var tableYear = GameManager.GetDistinctCustomerResultByYear();
+            for (int i = 0; i < tableYear.Rows.Count; i++)
+            {
+                var row = tableYear.Rows[i];
+
+                var pane = new AccordionPane();
+                pane.ID = row["Year"].ToString();
+                pane.HeaderContainer.Controls.Add(new LiteralControl(row["Year"].ToString()));
+
+                var tableMonthYear = GameManager.GetDistinctCustomerResultByMonthYear();
+                DataRow[] result = tableMonthYear.Select("Year = " + row["Year"]);
+                foreach (DataRow rowInner in result)
+                {
+                    string content = "<div id=\"cauhoi\">";
+                    content += "<div id=\"noidungcauhoi\">";
+                    content += "<a class=\"text_bold\">";
+                    content += "Tháng " + rowInner["Month"] + " năm " + rowInner["Year"];
+                    content += "</a>";
+                    content += "</div>";
+                    content += "<div id=\"cautraloi\">";
+                    content += "<table class=\"table\" border=\"1\" style=\"border: 1px solid grey; padding: 5px; border-collapse: collapse ;width: 100%\">";
+                    content += "<thead>";
+                    content += "<tr>";
+                    content += "<th class=\"header\" style=\"text-align: center; width:10%\">";
+                    content += GetLocaleResourceString("ContactUs.AutoNumber");
+                    content += "</th>";
+                    content += "<th class=\"header\" style=\"text-align: center; width:30%\">";
+                    content += GetLocaleResourceString("ContactUs.FullName");
+                    content += "</th>";
+                    content += "<th class=\"header\" style=\"text-align: center; width:40%\">";
+                    content += GetLocaleResourceString("ContactUs.Address");
+                    content += "</th>";
+                    content += "<th class=\"header\" style=\"text-align: center; width:30%\">";
+                    content += GetLocaleResourceString("Game1Award.CompleteDate");
+                    content += "</th>";
+                    content += "</tr>";
+                    content += "</thead><tbody>";
+                    var customercollection = GameManager.GetCustomerResultByDate(int.Parse(rowInner["Month"].ToString()), int.Parse(rowInner["Year"].ToString())).FindAll(IsWinner);
+                    foreach (var customerResult in customercollection)
+                    {
+                        content += "<tr>";
+                        content += "<td class=\"row\" style=\"text-align:center\">";
+                        content += customerResult.CustomerResultID;
+                        content += "</td>";
+                        content += "<td class=\"row\" style=\"text-align:left\">";
+                        content += customerResult.Customer.FullName;
+                        content += "</td>";
+                        content += "<td class=\"row\" style=\"text-align:left\">";
+                        content += customerResult.Customer.StreetAddress + " " +
+                                       customerResult.Customer.City;
+                        content += "</td>";
+                        content += "<td class=\"row\" style=\"text-align:left\">";
+                        content += customerResult.CompleteDate.ToShortDateString();
+                        content += "</td>";
+                        content += "</tr>";
+                    }
+                    content += "</tbody>";
+                    content += "</table>";
+                    content += "</div>";
+                    content += "</div>";
+                    pane.ContentContainer.Controls.Add(new LiteralControl(content));
+                }
+
+                ResultList.Panes.Add(pane);
+            }
         }
 
         static bool IsWinner(CustomerResult x)
         {
             return x.IsWinner;
-        }
-
-        protected void rptDatetime_ItemCreated(object sender, RepeaterItemEventArgs e)
-        {
-            var item = e.Item.DataItem as DataRowView;
-            if (item != null)
-            {
-                var lblDatetime = e.Item.FindControl("lblDatetime") as Label;
-                if (lblDatetime != null)
-                    lblDatetime.Text = GetLocaleResourceString("Common.Month") + " " + item[0] + " " +
-                                       GetLocaleResourceString("Common.Year") + " " + item[1];
-                var rptFullname = e.Item.FindControl("rptFullname") as Repeater;
-                if (rptFullname != null)
-                {
-                    rptFullname.DataSource = GameManager.GetCustomerResultByDate(int.Parse(item[0].ToString()),
-                                                                                 int.Parse(item[1].ToString())).Where(IsWinner);
-                    rptFullname.DataBind();
-                }
-            }
-        }
-
-        protected void rptFullname_ItemCreated(object sender, RepeaterItemEventArgs e)
-        {
-            var customerResult = e.Item.DataItem as CustomerResult;
-            if (customerResult != null)
-            {
-                var lblAutoNumber = e.Item.FindControl("lblAutoNumber") as Label;
-                if (lblAutoNumber != null)
-                    lblAutoNumber.Text = customerResult.CustomerResultID.ToString();
-                var lblFullname = e.Item.FindControl("lblFullname") as Label;
-                if (lblFullname != null)
-                    lblFullname.Text = customerResult.Customer.FullName;
-                var lblAddress = e.Item.FindControl("lblAddress") as Label;
-                if (lblAddress != null)
-                    lblAddress.Text = customerResult.Customer.StreetAddress + " " +
-                                       customerResult.Customer.City;
-                var lblCompleteDate = e.Item.FindControl("lblCompleteDate") as Label;
-                if (lblCompleteDate != null)
-                    lblCompleteDate.Text = customerResult.CompleteDate.ToShortDateString();
-            }
         }
     }
 }

@@ -3513,6 +3513,13 @@
     <Compile Include="BannerDetail.aspx.designer.cs">
       <DependentUpon>BannerDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ShippingInformation.aspx.cs">
+      <DependentUpon>ShippingInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShippingInformation.aspx.designer.cs">
+      <DependentUpon>ShippingInformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Game1Award.aspx.cs">
       <DependentUpon>Game1Award.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5503,6 +5510,7 @@
     <Content Include="CompareProducts.aspx" />
     <Content Include="ConditionsInfo.aspx" />
     <Content Include="ContactUs.aspx" />
+    <Content Include="ShippingInformation.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="ErrorPage.htm" />
     <Content Include="editors\fckeditor\editor\css\behaviors\disablehandles.htc" />
@@ -5925,7 +5933,6 @@
     <Content Include="Google\sample-neworder.txt" />
     <Content Include="Google\sample-orderchangestate.txt" />
     <Content Include="Google\sample-risk.txt" />
-    <Content Include="images\AdminLogo.jpg" />
     <Content Include="App_Themes\PhanNu\images\arrows.png" />
     <Content Include="App_Themes\PhanNu\images\bullets.png" />
     <Content Include="images\Calendar_scheduleHS.png" />
@@ -6798,6 +6805,7 @@
     <None Include="Install\Scripts\1.11\nopCommerce_upgrade.sql" />
     <None Include="Install\Scripts\nopCommerce_createDatabase.sql" />
     <Content Include="MasterPages\TwoColumnPhanNuGame.master" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="Uploaded\VideoClip\aaa.flv" />
     <None Include="Uploaded\VideoClip\tanlonghuy02.flv" />
     <Content Include="MasterPages\HomePagePhanNu.master" />

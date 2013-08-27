@@ -74,6 +74,13 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
             int totalRecords = 0;
             CustomerCollection customers = CustomerManager.GetAllCustomers(startDate,
                 endDate, email, username, dontLoadGuestCustomers, int.MaxValue, 0, out totalRecords);
+            if (cbLoadAdminOnly.Checked)
+            {
+                var revisedList = customers.FindAll(IsAdmin);
+                customers.Clear();
+                foreach (var customer in revisedList)
+                    customers.Add(customer);
+            }
             return customers;
         }
 
@@ -110,8 +117,7 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
 
         protected void BindGrid()
         {
-            CustomerCollection customers = GetCustomers();
-            gvCustomers.DataSource = customers;
+            gvCustomers.DataSource = GetCustomers();
             gvCustomers.DataBind();
         }
 
@@ -274,7 +280,12 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
 
         static bool IsBirthdayToday(Customer x)
         {
-            return x.DateOfBirth == DateTime.Today;
+            return (x.DateOfBirth == DateTime.Today);
+        }
+
+        static bool IsAdmin(Customer x)
+        {
+            return x.IsAdmin;
         }
     }
 }

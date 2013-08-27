@@ -1,5 +1,5 @@
 <%@ Page Language="C#" MasterPageFile="~/MasterPages/TwoColumnPhanNu.master" AutoEventWireup="true"
-    Inherits="NopSolutions.NopCommerce.Web.WebsiteMapPage" Codebehind="WebsiteMap.aspx.cs" %>
+    Inherits="NopSolutions.NopCommerce.Web.ShippingInformationPage" Codebehind="ShippingInformation.aspx.cs" %>
 
 <%@ Register TagPrefix="nopCommerce" TagName="Topic" Src="~/Modules/Topic.ascx" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphtitle" runat="Server">   

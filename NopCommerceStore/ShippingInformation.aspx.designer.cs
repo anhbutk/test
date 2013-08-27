@@ -10,7 +10,7 @@
 namespace NopSolutions.NopCommerce.Web {
     
     
-    public partial class WebsiteMapPage {
+    public partial class ShippingInformationPage {
         
         /// <summary>
         /// topicPrivacyInfo control.

@@ -683,6 +683,16 @@ namespace NopSolutions.NopCommerce.DataAccess.Game
                 return ds.Tables[0];
             return null;
         }
+
+        public override DataTable GetDistinctCustomerResultByYear()
+        {
+            Database db = NopSqlDataHelper.CreateConnection(_sqlConnectionString);
+            DbCommand dbCommand = db.GetStoredProcCommand("Nop_GetDistinctCustomerResultByYear");
+            DataSet ds = db.ExecuteDataSet(dbCommand);
+            if (ds.Tables.Count > 0)
+                return ds.Tables[0];
+            return null;
+        }
         #endregion
 
         #endregion

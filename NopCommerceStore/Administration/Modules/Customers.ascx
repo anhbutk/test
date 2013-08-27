@@ -82,6 +82,15 @@
         <td class="adminData">
             <asp:CheckBox runat="server" ID="cbDontLoadGuestCustomers"></asp:CheckBox>
         </td>
+    </tr
+     <tr>
+        <td class="adminTitle">
+            <nopCommerce:ToolTipLabel runat="server" ID="lblLoadAdminOnly" Text="<% $NopResources:Admin.Customers.LoadAdminOnly %>"
+                ToolTip="<% $NopResources:Admin.Customers.LoadAdminOnly %>" ToolTipImage="~/Administration/Common/ico-help.gif" />
+        </td>
+        <td class="adminData">
+            <asp:CheckBox runat="server" ID="cbLoadAdminOnly"></asp:CheckBox>
+        </td>
     </tr>
 </table>
 <p>

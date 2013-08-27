@@ -132,7 +132,7 @@ namespace NopSolutions.NopCommerce.Web.Modules
             return hasErrors;
         }
 
-        protected void UpdateShoppingCart()
+        protected void UpdateShoppingCart(string URL)
         {
             if (!IsShoppingCart)
                 return;
@@ -163,20 +163,23 @@ namespace NopSolutions.NopCommerce.Web.Modules
                     }
                 }
 
-                Response.Redirect("~/ShoppingCart.aspx");
+                if (URL != "")
+                    Response.Redirect(URL);
             }
         }
 
-        protected void ContinueShopping()
+        protected void ContinueShopping(string URL)
         {
             //string lastProductPageVisited = NopContext.Current.LastProductPageVisited;
             //if (!String.IsNullOrEmpty(lastProductPageVisited))
             //    Response.Redirect(lastProductPageVisited);
             //else
-            Response.Redirect("~/RecentlyAddedProducts.aspx");
+            if (URL != "")
+                Response.Redirect(URL);
+
         }
 
-        protected void Checkout()
+        protected void Checkout(string URL)
         {
             if (NopContext.Current.User == null || NopContext.Current.User.IsGuest)
             {
@@ -185,7 +188,8 @@ namespace NopSolutions.NopCommerce.Web.Modules
             }
             else
             {
-                Response.Redirect("~/Checkout.aspx");
+                if (URL != "")
+                    Response.Redirect(URL);
             }
         }
 
@@ -227,7 +231,7 @@ namespace NopSolutions.NopCommerce.Web.Modules
                 }
             }
             return pictureUrl;
-         }
+        }
 
         public string GetProductURL(ShoppingCartItem shoppingCartItem)
         {
@@ -242,27 +246,27 @@ namespace NopSolutions.NopCommerce.Web.Modules
             string result = ProductAttributeHelper.FormatAttributes(shoppingCartItem.ProductVariant, shoppingCartItem.AttributesXML);
             return result;
         }
-        
+
         public string GetShoppingCartItemUnitPriceString(ShoppingCartItem shoppingCartItem)
         {
             StringBuilder sb = new StringBuilder();
             decimal shoppingCartUnitPriceWithDiscountBase = TaxManager.GetPrice(shoppingCartItem.ProductVariant, PriceHelper.GetUnitPrice(shoppingCartItem, true));
             decimal shoppingCartUnitPriceWithDiscount = CurrencyManager.ConvertCurrency(shoppingCartUnitPriceWithDiscountBase, CurrencyManager.PrimaryStoreCurrency, NopContext.Current.WorkingCurrency);
             string unitPriceString = PriceHelper.FormatPrice(shoppingCartUnitPriceWithDiscount);
-            
+
             sb.Append("<span class=\"productPrice\">");
             sb.Append(unitPriceString);
             sb.Append("</span>");
             return sb.ToString();
         }
-        
+
         public string GetShoppingCartItemSubTotalString(ShoppingCartItem shoppingCartItem)
         {
             StringBuilder sb = new StringBuilder();
             decimal shoppingCartItemSubTotalWithDiscountBase = TaxManager.GetPrice(shoppingCartItem.ProductVariant, PriceHelper.GetSubTotal(shoppingCartItem, true));
             decimal shoppingCartItemSubTotalWithDiscount = CurrencyManager.ConvertCurrency(shoppingCartItemSubTotalWithDiscountBase, CurrencyManager.PrimaryStoreCurrency, NopContext.Current.WorkingCurrency);
             string subTotalString = PriceHelper.FormatPrice(shoppingCartItemSubTotalWithDiscount);
-            
+
             sb.Append("<span class=\"productPrice\">");
             sb.Append(subTotalString);
             sb.Append("</span>");
@@ -280,20 +284,21 @@ namespace NopSolutions.NopCommerce.Web.Modules
             }
             return sb.ToString();
         }
-        
+
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateShoppingCart();
+            UpdateShoppingCart("~/ShoppingCart.aspx");
         }
 
         protected void btnContinueShopping_Click(object sender, EventArgs e)
         {
-            ContinueShopping();
+            ContinueShopping("~/RecentlyAddedProducts.aspx");
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            Checkout();
+            UpdateShoppingCart("");
+            Checkout("~/Checkout.aspx");
         }
 
         protected void btnApplyCouponCode_Click(object sender, EventArgs e)

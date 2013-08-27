@@ -122,6 +122,8 @@ namespace NopSolutions.NopCommerce.DataAccess.Game
         public abstract void DeleteQuestionInMonthByMonthYear(int Month, int Year);
 
         public abstract DataTable GetDistinctCustomerResultByMonthYear();
+
+        public abstract DataTable GetDistinctCustomerResultByYear();
         #endregion
     }
 }

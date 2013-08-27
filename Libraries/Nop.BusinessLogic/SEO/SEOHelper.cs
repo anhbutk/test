@@ -657,9 +657,9 @@ namespace NopSolutions.NopCommerce.BusinessLogic.SEO
             return url;
         }
 
-        public static string GetWebsiteMapURL()
+        public static string GetShippingInformationURL()
         {
-            string url = string.Format(SettingManager.GetSettingValue("SEO.WebsiteMap.UrlRewriteFormat"), CommonHelper.GetStoreLocation());
+            string url = string.Format(SettingManager.GetSettingValue("SEO.ShippingInformation.UrlRewriteFormat"), CommonHelper.GetStoreLocation());
             return url;
         }
 

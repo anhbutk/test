@@ -10,13 +10,19 @@
     <div class="CheckoutData">
         <div class="OrderCompleted">
             <asp:Panel ID="pnlSucess" runat="server" Visible="false">
-                <div class="Body">
-                    <b>
-                        <%=GetLocaleResourceString("Checkout.YourOrderHasBeenSuccessfullyProcessed")%></b>
+                <div class="body">
                     <p>
-                        <%=GetLocaleResourceString("Checkout.OrderNumber")%>:
-                        <asp:Label runat="server" ID="lblOrderNumber" />
+                        <%=GetLocaleResourceString("Checkout.OrderNumber")%>
+                        <b>
+                            <asp:Label runat="server" ID="lblOrderNumber" /></b>
                     </p>
+                    <br />
+                    <p><%=GetLocaleResourceString("Checkout.YourOrderHasBeenSuccessfullyProcessed")%></p>
+                    <br />
+                    <p><%=GetLocaleResourceString("Checkout.YourOrderHasBeenSuccessfullyProcessed1")%></p>
+                    <br />
+                    <p><%=GetLocaleResourceString("Checkout.YourOrderHasBeenSuccessfullyProcessed2")%></p>
+                    <br />
                     <p>
                         <asp:HyperLink runat="server" ID="hlOrderDetails" Text="<% $NopResources:Checkout.OrderCompleted.Details %>" />
                     </p>
@@ -24,8 +30,8 @@
             </asp:Panel>
             <asp:Panel ID="pnlError" runat="server" Visible="false">
                 <b>
-                    <%=GetLocaleResourceString("Checkout.YourOrderHasBeenUnsuccessful")%></b>    
-                    <asp:Label ID="lblError" runat="server"></asp:Label>            
+                    <%=GetLocaleResourceString("Checkout.YourOrderHasBeenUnsuccessful")%></b>
+                <asp:Label ID="lblError" runat="server"></asp:Label>
             </asp:Panel>
             <div class="clear">
             </div>

@@ -13,12 +13,12 @@ namespace NopSolutions.NopCommerce.Web.Modules {
     public partial class Game1AwardControl {
         
         /// <summary>
-        /// rptDatetime control.
+        /// ResultList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptDatetime;
+        protected global::AjaxControlToolkit.Accordion ResultList;
     }
 }

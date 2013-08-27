@@ -536,6 +536,11 @@ namespace NopSolutions.NopCommerce.BusinessLogic.Game
         {
             return DBProviderManager<DBGameProvider>.Provider.GetDistinctCustomerResultByMonthYear();
         }
+
+        public static DataTable GetDistinctCustomerResultByYear()
+        {
+            return DBProviderManager<DBGameProvider>.Provider.GetDistinctCustomerResultByYear();
+        }
         #endregion
 
 

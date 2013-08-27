@@ -165,7 +165,7 @@ namespace NopSolutions.NopCommerce.BusinessLogic.SEO.Sitemaps
             updateTime = DateTime.Now; ;
             WriteUrlLocation(url, updateFrequency, updateTime);
 
-            url = SEOHelper.GetWebsiteMapURL();
+            url = SEOHelper.GetShippingInformationURL();
             updateFrequency = UpdateFrequency.weekly;
             updateTime = DateTime.Now; ;
             WriteUrlLocation(url, updateFrequency, updateTime);
