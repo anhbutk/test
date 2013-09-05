@@ -29,6 +29,7 @@ using NopSolutions.NopCommerce.BusinessLogic.Configuration.Settings;
 using NopSolutions.NopCommerce.BusinessLogic.Content.Topics;
 using NopSolutions.NopCommerce.BusinessLogic.CustomerManagement;
 using NopSolutions.NopCommerce.Common.Utils;
+using NopSolutions.NopCommerce.BusinessLogic.SEO;
 
 namespace NopSolutions.NopCommerce.Web.Modules
 {
@@ -96,7 +97,7 @@ namespace NopSolutions.NopCommerce.Web.Modules
             string str = string.Empty;
             str = Page.Request.QueryString["ReturnUrl"];
             if (string.IsNullOrEmpty(str))
-                str = "~/Default.aspx";
+                str = SEOHelper.GetCategoryURL(55);
 
             this.LoginForm.DestinationPageUrl = str;
         }

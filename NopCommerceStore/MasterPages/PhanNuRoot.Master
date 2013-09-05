@@ -107,9 +107,8 @@
                                 </div>
                             </td>
                             <td>
-                                <div id="menu6">
-                                    <a href="<%=SEOHelper.GetAccountURL()%>">
-                                        <%=GetLocaleResourceString("Account.MyAccount")%></a>
+                                <div id="menu6">                                    
+                                    <asp:HyperLink ID="lnkLogin" runat="server"></asp:HyperLink>
                                 </div>
                             </td>
                             <td>

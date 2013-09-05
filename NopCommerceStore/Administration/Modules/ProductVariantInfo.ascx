@@ -452,7 +452,7 @@
             </nopCommerce:DecimalTextBox>
         </td>
     </tr>
-    <tr class="adminGroup" style="display:none">
+    <tr class="adminGroup">
         <td class="adminTitle">
             <nopCommerce:ToolTipLabel runat="server" ID="lblProductPublished" Text="<% $NopResources:Admin.ProductVariantInfo.Published %>"
                 ToolTip="<% $NopResources:Admin.ProductVariantInfo.Published.ToolTip %>" ToolTipImage="~/Administration/Common/ico-help.gif" />

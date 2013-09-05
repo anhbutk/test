@@ -294,7 +294,7 @@ namespace NopSolutions.NopCommerce.Web.Administration.Modules
                  orderMinimumQuantity, orderMaximumQuantity, warehouseID, disableBuyButton,
                  price, oldPrice, weight, length,
                  width, height, 0, availableStartDateTime, availableEndDateTime,
-                 published, false, 1, nowDT, nowDT);
+                 true, false, 1, nowDT, nowDT);
 
             return product;
         }

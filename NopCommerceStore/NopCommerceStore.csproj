@@ -5492,6 +5492,7 @@
     <Content Include="App_Themes\nopClassic\product.css" />
     <Content Include="App_Themes\nopClassic\servercontrols.css" />
     <Content Include="App_Themes\PhanNu\images\newarrow.png" />
+    <Content Include="App_Themes\PhanNu\images\special1.jpg" />
     <Content Include="App_Themes\PhanNu\nivo-slider.css" />
     <Content Include="App_Themes\Print\print.css" />
     <Content Include="Blog.aspx" />
